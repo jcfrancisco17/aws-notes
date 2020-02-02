@@ -77,3 +77,96 @@
 
 ### Compliance
 
+ - SOC 1/ISAE 3402, SOC 2, SOC 3
+ - FISMA, DIACAP, and FedRAMP
+ - PCI DSS Level 1
+ - ISO 9001, ISO 27001, ISO 27017, ISO 27018
+
+ ## Amazon Web Services Cloud Platform
+
+ ### Analytics
+
+ - Athena
+   - Query and analyze data in S3 using SQL.
+   - Serverless, only pay for queries run.
+   - Most results are delivered within seconds.
+   - No need for ETL jobs
+   - Integrated with AWS Glue Data Catalog
+     - Create unified metadata repository across various services
+     - Crawl data sources to discover schemas and populcate Catalog with new and modified table and patition defintions
+     - Maintain schema versioning
+     - Transform or convert data into columnar format to optimize cost and improve performance.
+
+  - EMR
+    - Managed Hadoop framework
+    - Easy, fast, and cost-effective service to process vast amounts of data across dynamically scalable EC2 instances
+    - Also availbale in Spark, HBase, Presto, and Flink
+    - Interact with AWS data stores such as S3 and DynamoDB
+    - EMR Notebooks, based on Jupyter Notebook, provide dev and collaboration environment for ad hoc querying and exploratory analysis.
+    - Handles big data use cases
+      - log analysis
+      - web indexing
+      - ETL
+      - machine learning
+      - financial analysis
+      - scientific simulation
+      - bioinformatics
+
+  - CloudSearch
+    - Set up, manage, and scale a search solution for your website or app
+    - Supports 34 languages, higlighting, autocomplete, and geospatial search
+
+  - Elasticsearch
+    - Log analytics, full-text search, application monitoring, and clickstream analytics
+    - Integrates with Logstash and Kibana for data ingestion and visualization
+    - Integrates with AWS services:
+      - VPC
+      - KMS
+      - Kinesis Data Firehose
+      - Lambda
+      - IAM
+      - Cognito
+      - CloudWatch
+
+  - Kinesis
+    - Collect, process, and analyze real-time, streaming data
+    - Process and analyze data as it arrives and respond instantly
+    - Ingest video, audio, application logs, website clickstreams, and IoT telemetry data for machine learning, analytics, etc
+    - Currenlty offers four services:
+      - Kinesis Data Firehose
+      - Kinesis Data Analytics
+      - Kinesis Data Streams
+      - Kinesis Video Streams
+
+   - Kinesis Data Firehose
+     - Easiest way to reliaby load streaming data into data stores and analytics tools.
+     - Capture, transform, and load streaming data into
+       - S3
+       - Reshift
+       - Elasticsearch
+       - Splunk
+     - Fully managed. Scales to match throughput of data
+     - Can batch, compress, transform, and encrypt data before loading it at the destination.
+     - Can configure delivery stream to convert incoming data to columnar formats like Apached Parquet and Apacher ORC before data is delivered to S3.
+
+   - Kinesis Data Analytics
+     - Easiest way to analyze streaming data, gain actionable insights, and respond to business and customer needs in real time.
+     - Reduces complexity of building, managing, and integrating streaming applications with other AWS services.
+     - Easily query streaming data using SQL or build entire streaming applications using templates and an interactive SQL editor
+     - Has open source Java libraries
+     - Scales automatically to match volume and throughput rate of incoming data
+
+   - Kinesis Data Streams
+     - Massively scalable real-time data streaming service.
+     - Continuously caputre gigabytes of data per second from hundreds of thousands sources.
+     - Data is availalable in milliseconds to enable real-time analytics.
+
+   - Kinesis Video Streams
+     - Securely stream video from connected devices to AWS for analytics, ML, playback, etc.
+     - Automatically provisions and elastically scales all infrastructure.
+     - Durably stores, encrypts, and indexes video data in streams.
+     - Allows access to data through APIs.
+     - Allows playback video for live and on-demand viewing
+     - Integrates with Amazon Recognition Video for computer vision and video analytics.
+     - Has libraries for ML like Apache MxNet, TensorFlow, and OpenCV.
+
