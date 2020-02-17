@@ -170,3 +170,44 @@
      - Integrates with Amazon Recognition Video for computer vision and video analytics.
      - Has libraries for ML like Apache MxNet, TensorFlow, and OpenCV.
 
+   - Redshift
+     - Fast and scalable data warehouse
+     - Analyze data across data warehouse and data lake
+     - Delivers 10x performance than other data warehouses by using:
+       - machine learning,
+       - massively parallel execution
+       - columnar storage on high-performance disk
+     - Setup in minutes
+     - Run queries across petabytes of data in Redshift data warehouse, exabytes in data lake built on S3.
+
+   - QuickSight
+     - Fully managed Business Intelligence (BI) service
+     - Create and publish interactive dashboards accessible from browsers or mobile devices.
+     - Can embed dashboards into applications.
+
+   - Data Pipeline
+     - Process and move data between AWS compute and storage services, and on-premises data sources, at specified intervals.
+     - Basically ETL
+     - Transfer results to S3, RDS, DynamoDB, or EMR.
+     - Fault tolerant, repeatable, and highly available
+     - No need to worry about the ff:
+       - ensuring resource availability
+       - managing inter-task dependencies
+       - retrying transient failures or timeouts in individual tasks
+       - creating failure notification system.
+
+    - Glue
+      - Fully managed ETL service for analytics.
+        - Point Glue to data stored on AWS
+        - Glue discovers data and stores metadata (table definition and schema) in Glue Data Catalog
+        - Data is immediately searchable, queryable, and available for ETL.
+
+    - Lake Formation
+      - Make it easy to setup a secure data lake in days.
+      - Define where data resides and what data access and security policies to apply.
+      - Integrates with
+        - EMR for Spark
+        - Redshift
+        - Athena
+        - SageMaker
+        - QuickSight
