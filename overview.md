@@ -211,3 +211,56 @@
         - Athena
         - SageMaker
         - QuickSight
+
+    - Managed Streaming for Kafka (MSK)
+      - Fully managed Apache Kafka
+      - Automatically provisions and runs your Apache Kafka clusters.
+      - Monitors cluster health and automatically replaces unhealthy nodes with no downtime
+      - Encrypts data at rest.
+      - Kafka is an open-source platform for building real-time streaming data pipelines and applications
+        - Used to populate data lakes, stream changes to and from databases, and power machine learning and analytics applications.
+ 
+ ### Application Integration
+
+    - Step Functions
+      - Coordinate multiple AWS services into serverless workflows
+      - Workflows are made up of a series of steps, with the output of one step acting as the input into the next.
+      - Workflow is translated into a state machine diagram
+      - Automatically triggers and tracks each step, and retries when there are errors to the application executes in order and as expected.
+
+    - MQ
+      - A managed message broker service for Apache ActiveMQ
+      - Manages provisioning, setup, and maintenance of ActiveMQ
+        - Message brokers allow different systems, often using different programming languages, and on different platforms, to communicate and exchange information.
+      - Supports JNS, NMS, AMQP, SMTOP, MQTT, and WebSocket
+
+    - SQS
+      - Fully managed message queueing service
+      - Standard queues offer maximum throughput, best-effort ordering, and at-least-once delivery.
+      - FIFO queues are designed to guarantee that messages are processed exactly once, in the exact order that they are sent.
+
+    - SNS
+      - Highly available, durable, secure, fully managed pub/sub message service
+      - Provides topics for high-throughput, push-based, many-to-many messaging
+      - Fan out messages to subscriber endpoints like SQS, Lambda, and HTTP/S webhooks.
+      - Fan out notifications to end users using mobile push, SMS, and email.
+
+    - SWF
+      - Build, run, and scale background jobs that have parallel or sequential steps.
+      - Fully managed state tracker and task coordinator
+      - If your application's steps take more than 500 milliseconds to complete, you need to track the state of processing.
+        - Note: Odd, very specific criteria for SWF. Not sure what this means.
+      - Recover or retry if a task fails.
+
+  ### AR and VR
+
+    - Sumerian
+      - Create and run VR, AR, and 3D applications quickly without requiring any specialized programming or 3D graphics expertise.
+  
+  ### Cost Management
+
+    - Cost Explorer
+
+      
+
+
