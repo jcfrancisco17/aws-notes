@@ -1,0 +1,48 @@
+**What I usually forget or an unfamiliar with**
+
+- RDS authentication with IAM is possible
+  - works with MySQL and Postgres
+  - Uses auth token instead of passwords
+    - RDS generates on request
+    - Generated using AWS Signature v4
+    - 15 minutes lifetime.
+  - No need to store user credentials. Managed by IAM
+  - Can still use database auth.
+  - Network traffic is encrypted using SSL
+  - Can use profile credentials specific to EC2 instance to access database instead of passwords.
+- AWS Budgets can set custom budget that alerts when cost, usage, or forecasted usage exceeds the budget.
+  - Monthly, quarterly, or yearly
+  - Alerts can be sent via email or SNS topic
+  - Set a custom reservation utlitization target. Receive alerts when underutilized.
+  - Create and track from Budgets dashboard or Budgets API
+- Cost explorer helps visualize and manage AWS costs and usages over time.
+  - Reports / data last up to the last 13 months.
+  - Forecast next three months
+  - Recommend RI purchases.
+- Convert private key (.pem) to .ppk to ssh instance using PuTTY
+- Usual AMI usernames
+  - Amazon Linux - ec2-user
+  - RHEL - ec2-user / root
+  - Ubuntu - ubuntu / root
+  - Cenots - centos
+  - Debian - admin / root
+  - Fedora - ec2-user
+  - SUSE - ec2-user / root
+- S3 Client side encryption
+  - Encrypt data before sending to S3
+  - Can either use:
+    - AWS KMS-managed customer master key
+      - Provide AWS KMS customer master key ID (CMK ID) to AWS.
+    - Client-side master key.
+      - Client-side master keys and unencrypted data are never sent to AWS.
+    - Cannot decrypt data when encryption keys are lost.
+  - When uploading:
+    - S3 encryption client generates one-time-use symmetric key aka data encryption key or data key. 
+      - Uses data key to encrypt single S3 object, ie data key is per object.
+    - Client encrypts the data key using the provided master key.
+    - Client uploads the encrypted data key and its material description as part of the object metadata.
+       - Client uses the material description to know which client-side master key to use for decryption.
+    - Client uploads encrypted data to S3
+    - Client saves encrypted data key as object metadata (x-amz-meta-x-amz-key) in S3.
+  
+ 
