@@ -111,5 +111,53 @@
 - S3 versioning
   - Can recover objects from accidental deletion or overwrite.
   - Preserver, retrieve, restore every version of ever object stored in S3 bucket.
-  
+- AMI Copying
+  - Within or across an AWS region
+  - Can copy EBS-backed AMI or instance store-backed AMIs
+  - Can copy encrypted AMIs and AMIs with encrypted snapshots.
+- DynamoDB Auto Scaling
+  - Automate capacity management for your tables and global secondary indexes.
+- EBS RAID options
+  - RAID 0
+    - When I/O performance is more important the fault tolerance, ie heavily used database
+    - I/O is distributed across the volumes in a stripe.
+    - Performance of the stripe is limited to the worst performing volume
+    - Loss of a single volume results in complete data loss for the array.
+  - RAID 1
+    - When fault tolerance is more important the I/O performance.
+    - Does not provide write performance improvement
+    - Requires more EC2 to EBS bandwidth than non-RAID because data is written to multiple volumes simultaneously.
+- Enhanced Networking
+  - Can provide higher I/O performance and lower CPU utilization to EC2
+  - Requires HVM AMI instead of PV AMI
+- Placement groups
+ - Used for inter-instance communication.
+- SAML
+  - AWS supports identify federation with SAML 2.0
+  - Enables federated SSO. Login to AWS console or AWS API without having to create an IAM user for everyone in the org.
+  - MS Active Directory implements SAML
+- Web Identity Federation
+  - Users sign in via an external identity provider, ie Amazon, Facebook, Google
+- Data Transfer
+  - Data transfer from EC2 to S3, Glacier, DynamoDB, SES, SQS, SimpleDB in the same region has no cost at all.
+- AWS Directory service
+  - For customers who want to use existing MS AD or LDAP-aware applications in the cloud.
+  - AWS Directory Service Simple AD provides a subset of the features offered by AWS Managed MS AD.
+- Mult-AZ RDS vs Read replica
+  | Mutli-AZ RDS | Read replica |
+  | --- | --- |
+  | sync | async |
+  | only primary is active | all are accessible and can be read |
+  | automated backups are taken from standby | No backups by default |
+  | 2 AZ in a region | Can be within AS, cross-AZ, or cross-region |
+  | engine version upgrade on primary | engine version upgrade is independent from source instance |
+  | automatic failover to standby | can be promoted to standalone |
+- Instance stores
+  - Named as ephemeral[0-23]
+  - Data persists during reboots, intentional or not
+  - Data is lost when
+    - disk drive fails
+    - instance stops
+    - instance terminates
+    
   
