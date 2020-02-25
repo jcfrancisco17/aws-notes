@@ -44,5 +44,72 @@
        - Client uses the material description to know which client-side master key to use for decryption.
     - Client uploads encrypted data to S3
     - Client saves encrypted data key as object metadata (x-amz-meta-x-amz-key) in S3.
+  - When downloading:
+    - Client downloads encrypted object
+    - Client determines the master key to use from the object's metadata
+    - Client uses master key to decrypt the data key
+    - Client uses data key to decrypt the object.
+- S3 Server-side Encryption
+  - AWS KMS-Managed Keys (SSE-KMS) 
+    - Uploaded and managed by AWS
+  - Customer-provided key (SSE-C)
+    - Encryption key is part of the request to upload the object to S3.
+    - S3 does both the encryption and decryption
+- Possible to host a web app in S3.
+  - Enable CORS support in the bucket to make authenticated requests the same bucket.
+- S3 Cross-Region Replication (CRR)
+  - Bucket configuraiton
+  - Automatic, async copying of objects across buckets in different AWS Regions.
+- Security group
+  - Instance level
+  - Instance in a subnet in a VPC can have a different set of SG from the rest.
+  - Instance is assigned the default sg of the VPC if not assigned at launch time.
+  - Limit of 5 sg assigned to an instance
+- Metrics not readily available in CloudWatch
+  - Memory utilization
+  - Disk swap utilization
+  - Disk space utilization
+  - Page file utilization
+  - Log collection
+- Lambda encryption
+  - Lambda encrypts environment variables using KMS
+  - When invoked, Lambda decrypts the env variables and make it available to the code.
+  - Lambda uses a default service key on first create or update of Lambda function that uses env variables to encrypt env variables.
+  - To use encryption helpers and use JMS to encrypt env variables after the lambda us created, create an AWS KMS key and use it instead of the default key.
+- CIDR block
+  - Given /27
+    - 32 - 27 (mask number) = 5
+    - 2^5 = 32
+    - 32 - 5 (first 4 and last IP address) = 27
+  - First 4 and last IP address in each subnet CIDR block are not available for use.
+  - The allowed block size is between /28 and /16
+  - Must not overlap with any existing CIDR block that's associated with the VPC
+  - Cannot increase of decrease block size.
+  - The number of CIDR blocks associated with a VPC is limited.
+  - The number of routes you can add to route table is limited.
+  - CIDR block must not be the same or larger than the CIDR range of a route in any of the VPC route tables.
+    - 10.0.0.0/25 (smaller) can be associated with 10.0.0.0/24
+- Kinesis Data Firehose
+  - load streaming data into data stores and analytics tools
+    - S3
+    - Redshift
+    - Elasticsearch
+    - Splunk
+  - Near real-time analytics
+  - Fully managed, auto scales
+  - Batch, compress, and encrypt data before loading it to the destination.
+- S3 Select
+  - Retrieve specific data from contents of an object using SQL expressions without retrieving the entire object.
+- Redshift Spectrum
+  - Run queries against exabytes of unstructured data in S3 with no loading or ETL required.
+- Bring Your Own IP Addresses (BYOIP)
+  - Bring part or all of your public IPv4 address range to you AWS account.
+  - You still own the IP but AWS advertises it on the Internet.
+  - Route Origin Authorization (ROA)
+    - Document created through Regional Internet Registry (RIR)
+    - Contains the address range, ASNs that are allowed to advertise the address range, and expiration date.
+- S3 versioning
+  - Can recover objects from accidental deletion or overwrite.
+  - Preserver, retrieve, restore every version of ever object stored in S3 bucket.
   
- 
+  
