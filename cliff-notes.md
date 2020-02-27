@@ -262,3 +262,41 @@
 - Common among volumes
   - 80,000 Max IOPS/instance
   - 1,750 MB/s Max Throughput/instance
+- Lamba@Edge
+  - Run lambda functions to customize content that CloudFront delviers, executing the functions in locations closer to the viewer.
+- Standard RIs
+  - Change AZ, scope, network platform, or instance size within the instance family
+- Convertible RIs
+  - Option to change families, OS types, and tenancy
+  - Can only be exchanged for other reserved RIs
+- Scheduled RIs
+  - Purchase capacity reservations that recur on a daily, weekly, or monthly basis, with a start time and duration, for a one-year term.
+- Regional RIs
+  - Reserve capacity to a specific AWS Region
+- Zonal RI
+  - Reserve capacity to a specific AZ
+- SE One Zone-IA
+  - For infrequenlty accessed data but requires rapid accss when needed.
+  - Stored only in single AZ
+  - Costs 20% less than S3 standard-IA
+  - Same high durability, high throughput, and low latency as S3 Standard and S3 Standard-IA.
+    - Durability of 11 9's of objects in AZ but data will be lost in event of AZ destruction.
+    - 99.95% availability.
+  - Good choice for secondary backup or easily recreatable data.
+  - Set at the object level.
+  - Can exist in the same bucket as S3 Standard and S3 Standard-IA
+  - Can use Lifecycle Policies to automatically transition objects between storage classes
+- DynamoDB partitions
+  - Partition key design that doesn't distribute I/O requests evenly can create hot partitions that result in throttling and use provisioned I/O inefficiently.
+  - Generally high-cardinality of parition keys == better performance
+  - Less distince partition keys == slow performance
+  - Composite key, composed of partition and sort key, improves performance.
+- Redis security
+  - applies to elasticache
+  - `--auth-token` requires user to enter a password before being able to execute Redis commands on a password-protected Redis server. Use when creating a cluster or replication group.
+  - `--transit-encryption-enabled`
+- AWS Shield Advanced
+  - Protect attacks on EC2, ELB, CloudFront, and Route53 resources
+  - Detection and mitigation against large and sophisticated DDoS attacks, near real-time visibility into attacks, and integration with AWS WAF.
+  - 24x7 access to AWS DDoS Response Team
+  - All AWS customers benefit from AWS Shield Standard
