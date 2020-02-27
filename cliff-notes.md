@@ -222,4 +222,43 @@
     - Communicate with origin using HTTP/S depending on the protocol of the viewer.
   - Field-Level Encryption
     - Securely upload user-submitted sensitive info to web servers.
-- 
+- EBS Snapshots
+  - Possible to take snapshots while still being able perform normal read and write on the volume
+  - Multiple pending snapshots is possible but may result to reduced volume performance
+- gp2
+  - General Purpose SSD
+  - Balance of price and performance
+  - Recommended for most workloads
+  - Bootable
+  - 1GB - 16TB size
+  - 16,000* max IOPS/volume
+  - 250* MB/s max throughput/volume
+- io1
+  - Provisioned IOPS SSD
+  - Mission-critical, low-latency, or high-throughput workloads
+  - Consistent IOPS performance
+  - Large databases, ie MongoDB, Cassandra, relational DBs
+  - Bootable
+  - 4GB - 16TB
+  - 64,000* max IOPS/volume
+  - 1,000* MB/s max througput/volume
+- st1
+  - Throughput-Optimized HDD
+  - Throughput-optimized, frequently accessed workloads
+  - Streaming workloads requiring consistent, fast throughput at a low price
+  - Big data, data warehouses, log processing
+  - Not bootable
+  - 500GB - 16TB
+  - 500 Max IOPS/volume
+  - 500 MB/s Max throughput/volume
+- sc1
+  - Cold HDD
+  - Throughput-optimized, infrequently accessed workloads
+  - Lowest cost
+  - Not bootable
+  - 500GB - 16TB
+  - 250 Max IOPS/volume
+  - 250 MB/s Max throughput/volume
+- Common among volumes
+  - 80,000 Max IOPS/instance
+  - 1,750 MB/s Max Throughput/instance
